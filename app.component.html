@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+<form [formGroup]="todoList">
+  <input formControlName="todoValue" type="text">
+  <button type="button" (click)="addTodo()">Add</button>
+  <button type="button" (click)="deleteAll()">Remove All</button>
+  <br><br>
+  <span *ngFor="let todoData of newArr">
+  <input type="checkbox" (change)="selected($event)">{{todoData.name}}
+  <button type="button" (click)="deleteSelected(todoData.name)">Completed</button><br>
+  </span>
+</form>
+</div>
+<router-outlet></router-outlet>
